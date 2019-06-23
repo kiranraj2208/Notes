@@ -4,10 +4,12 @@
     padding: 2%;
     background-color: #eee;
     display: flex;
+    box-sizing: border-box;
+    overflow: scroll;
 }
 
 .NotesCard {
-    margin: 10px;
+    padding: 10px;
 }
 
 @media (max-width:600px) {
