@@ -30,7 +30,7 @@
 }
 
 .Favorite:active {
-    animation: favorite 1s;
+    animation: favorite 500ms;
 }
 
 @keyframes favorite{
@@ -39,4 +39,10 @@
     50% {transform: scale(1.5)}
     75% {transform: scale(1.25)}
     100% {transform: scale(1)}
+}
+
+@media (max-width: 600){
+    .NotesCard {
+        transition: transform 100ms;
+    }
 }
