@@ -1,0 +1,33 @@
+.Paper {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    background-color: #fff;
+    box-shadow: 10px;
+    padding: 2%;
+    outline: none;
+    width: 60%;
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid black
+  }
+
+@media (max-width: 700px) {
+    .Paper{
+        top:5%;
+        left: 5%;
+        width: 90%;
+    }
+}
+
+.typo{
+        background-color: lightBlue;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+}
+.typoSecond {
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}

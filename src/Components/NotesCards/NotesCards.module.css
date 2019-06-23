@@ -1,0 +1,18 @@
+.NotesCards {
+    height: 100vh;
+    width: 100%;
+    padding: 2%;
+    background-color: #eee;
+    display: flex;
+}
+
+.NotesCard {
+    margin: 10px;
+}
+
+@media (max-width:600px) {
+    .NotesCards {
+        padding-left: 13%;
+        display: block;
+    }
+}

@@ -1,0 +1,42 @@
+.Navigation {
+    height: 100vh;
+    width: 100%;
+    z-index: 400;
+}
+
+.Router {
+    height: 100%;
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li .link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li .link:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+

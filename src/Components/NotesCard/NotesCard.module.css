@@ -1,0 +1,42 @@
+.NotesCard {
+    transition: transform 500ms;
+    max-width: 345px;
+    z-index: 1;
+}
+
+.card {
+    max-width: 345px;
+}
+.media{
+    height: 0;
+    padding-top: 56.25%;
+}
+.avatar{
+    background-color: #ff0000;
+}
+
+.NotesCard:hover{
+     transform: scale(1.05);
+}
+
+.NotesMenuItem {
+    background-color: #fff;
+    color: black;
+}
+
+.Favorite {
+    transform: scale(1);
+    transition: animation;
+}
+
+.Favorite:active {
+    animation: favorite 1s;
+}
+
+@keyframes favorite{
+    0% {transform: scale(1)}
+    25%{transform: scale(1.25)}
+    50% {transform: scale(1.5)}
+    75% {transform: scale(1.25)}
+    100% {transform: scale(1)}
+}
