@@ -9,12 +9,12 @@
 }
 
 .NotesCard {
-    padding: 10px;
+    padding: 2%;
 }
 
 @media (max-width:600px) {
     .NotesCards {
-        padding-left: 11%;
+        padding: 2%;
         display: block;
     }
 }
