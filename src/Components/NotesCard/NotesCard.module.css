@@ -43,6 +43,6 @@
 
 @media (max-width: 600){
     .NotesCard {
-        transition: transform 100ms;
+        transition: none;
     }
 }
