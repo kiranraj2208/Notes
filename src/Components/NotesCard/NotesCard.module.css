@@ -30,7 +30,7 @@
 }
 
 .Favorite:active {
-    animation: favorite 500ms;
+    animation: favorite 1s;
 }
 
 @keyframes favorite{
