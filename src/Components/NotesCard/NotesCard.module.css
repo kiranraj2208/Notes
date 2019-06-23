@@ -41,8 +41,9 @@
     100% {transform: scale(1)}
 }
 
-@media (max-width: 600){
-    .NotesCard {
+/* @media (max-width: 600px){
+    .NotesCard:hover {
         transition: none;
+        transform: none;
     }
-}
+} */
