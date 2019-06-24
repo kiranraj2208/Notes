@@ -1,0 +1,12 @@
+.CreateNoteDialog {
+    border-radius: 50px;
+}
+
+.TextField {
+    margin: auto;
+    width: 90%;
+}
+
+.DialogTitle {
+    background-color: blueviolet;
+}

@@ -8,6 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import SpeedDial from '../SpeedDial/SpeedDial';
+import classes from './CreateNoteDialog.module.css';
 
 const useStyles = makeStyles(theme => ({
     textField: {
@@ -30,13 +31,14 @@ export default function AlertDialog(props) {
         setOpen(false);
     }
 
-    if (props.title.lenght > 0){
+    if (props.title.length > 0){
         setToggle(1);
     }
     
 
     return (
-        <div>
+        <div
+            className={classes.CreateNoteDialog}>
             {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
                 Open alert dialog
       </Button> */}
@@ -46,10 +48,14 @@ export default function AlertDialog(props) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"Do you want to create a new note?"}</DialogTitle>
+                <DialogTitle 
+                style={{backgroundColor:'blue',
+                    color:'white'}}
+                id="alert-dialog-title">{"Do you want to create a new note?"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         <TextField
+                        style={{width:'95%'}}
                             required
                             id="outlined-required"
                             label="Title of the note"
