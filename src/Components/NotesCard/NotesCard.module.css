@@ -1,6 +1,7 @@
 .NotesCard {
     transition: transform 500ms;
     max-width: 500px;
+    min-width: 345px;
     z-index: 1;
 }
 

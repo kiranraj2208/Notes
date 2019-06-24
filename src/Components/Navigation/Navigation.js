@@ -18,17 +18,17 @@ const Navigation = props => {
                 </Link>
                 </li>
                 <li>
-                    <Link className={classes.link} component={RouterLink}  to="/Second">
+                    <Link className={classes.link} component={RouterLink}  to="/">
                     Notes
                 </Link>
                 </li>
                 <li>
-                    <Link to="/" className={classes.link} component={RouterLink} >
+                    <Link to="/third" className={classes.link} component={RouterLink} >
                         Other</Link>
                 </li>
             </ul>
             <Route path="/first" component={First}/>
-            <Route exact path="/second" component={NotesCards} />
+            <Route exact path="/" component={NotesCards} />
         </Router>
         </div>
     );

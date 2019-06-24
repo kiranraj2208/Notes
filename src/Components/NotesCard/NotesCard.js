@@ -79,7 +79,7 @@ const NotesCard = props => {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        <MenuItem onClick={handleClose}
+                        <MenuItem onClick={props.deleteNote}
                         style={{ backgroundColor: 'white', color: 'black' }}>Delete</MenuItem> 
                     </Menu>
                     </div>

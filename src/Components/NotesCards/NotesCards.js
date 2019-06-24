@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import NotesCard from '../NotesCard/NotesCard';
 import classes from './NotesCards.module.css';
+import CreateNoteDialog from '../CreateNoteDialog/CreateNoteDialog';
 
 const NotesCards = props => {
-    const [notes, setNotes] = useState([])
+    const [notes, setNotes] = useState([]);
+    const [title, setTitle] = useState('');
     const changeFavorite = (event, index) => {
         event.stopPropagation();
         const oldNotes = [...notes];
@@ -15,6 +17,16 @@ const NotesCards = props => {
         const oldNotes = [...notes];
         oldNotes[index].description = event.target.value;
         setNotes(oldNotes);
+    }
+
+    const deleteNote = (event, index) => {
+        console.log('deleting notes')
+        event.stopPropagation();
+        setNotes( notes.filter( (ele, ind) => ind !== index) );
+    }
+
+    const titleChangeHandler = (event) => {
+        setTitle(event.target.value)
     }
    
     
@@ -37,6 +49,17 @@ const NotesCards = props => {
         console.log('init');
     }, [])
 
+    const createNote = () => {
+        const arr = [...notes];
+        arr.push({
+            title: title,
+            timestamp: new Date(Date.now()).toUTCString(),
+            description: '',
+            favorite: false
+        })
+        setNotes(arr);
+    }
+
  
     const AllNotesCards = 
     notes.map( (note, index) => 
@@ -51,13 +74,16 @@ const NotesCards = props => {
         favorite={note.favorite}
         changeFavorite={(event) => {changeFavorite(event, index)}}
         changeDescription={(event) => {changeDescription(event, index)}} 
-        
+        deleteNote={(event) => {deleteNote(event, index)}}
     />
         </div> )
  
     return (
     <div className={classes.NotesCards}>
         {AllNotesCards}
+        <CreateNoteDialog createNote={createNote}
+        title={title}
+        titleChangeHandler={titleChangeHandler}/>
     </div>
     )
 }
