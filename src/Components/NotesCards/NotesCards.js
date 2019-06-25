@@ -5,7 +5,14 @@ import CreateNoteDialog from '../CreateNoteDialog/CreateNoteDialog';
 
 const NotesCards = props => {
     const [notes, setNotes] = useState([]);
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState({
+        title: '',
+        timestamp: new Date(Date.now()).toString().slice(0, 25),
+        favorite: false,
+        description: '',
+    });
+
+
     const changeFavorite = (event, index) => {
         event.stopPropagation();
         const oldNotes = [...notes];
@@ -26,7 +33,9 @@ const NotesCards = props => {
     }
 
     const titleChangeHandler = (event) => {
-        setTitle(event.target.value)
+        const newTitle = {...title};
+        newTitle.title = event.target.value;
+        setTitle(newTitle);
     }
    
     
@@ -34,13 +43,13 @@ const NotesCards = props => {
         const arr = [
             {
                 title: "First title",
-                timestamp: new Date(Date.now()).toUTCString(),
+                timestamp: new Date(Date.now()).toString().slice(0, 25),
                 description: "",
                 favorite: false
             },
             {
                 title: "Second title",
-                timestamp: new Date(Date.now()).toUTCString(),
+                timestamp: new Date(Date.now()).toString().slice(0, 25),
                 description: "This is dSecond ecription",
                 favorite: false
             }
@@ -51,12 +60,14 @@ const NotesCards = props => {
 
     const createNote = () => {
         const arr = [...notes];
-        arr.push({
-            title: title,
-            timestamp: new Date(Date.now()).toUTCString(),
-            description: '',
-            favorite: false
-        })
+        console.log('note created');
+        arr.push(title);
+        // arr.push({
+        //     title: title,
+        //     timestamp: new Date(Date.now()).toUTCString(),
+        //     description: '',
+        //     favorite: false
+        // })
         setNotes(arr);
     }
 
@@ -81,7 +92,8 @@ const NotesCards = props => {
     return (
     <div className={classes.NotesCards}>
         {AllNotesCards}
-        <CreateNoteDialog createNote={createNote}
+        <CreateNoteDialog
+        createNote={createNote}
         title={title}
         titleChangeHandler={titleChangeHandler}/>
     </div>

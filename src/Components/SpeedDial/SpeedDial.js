@@ -45,8 +45,6 @@ class SpeedDialTooltipOpen extends React.Component {
         this.setState(state => ({
             open: !state.open,
         }));
-        // this.props.openDialog();
-        // this.dialog = <CreateNoteDialog open={true} />
     };
 
     handleOpen = () => {

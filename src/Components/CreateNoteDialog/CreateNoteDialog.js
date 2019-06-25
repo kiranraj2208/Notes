@@ -9,6 +9,7 @@ import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import SpeedDial from '../SpeedDial/SpeedDial';
 import classes from './CreateNoteDialog.module.css';
+import CreateNoteIcon from '../CreateNoteIcon/CreateNoteIcon';
 
 const useStyles = makeStyles(theme => ({
     textField: {
@@ -25,6 +26,7 @@ export default function AlertDialog(props) {
 
     function handleClickOpen() {
         setOpen(true);
+        console.log(open)
     }
 
     function handleClose() {
@@ -59,7 +61,7 @@ export default function AlertDialog(props) {
                             required
                             id="outlined-required"
                             label="Title of the note"
-                            value={props.title}
+                            value={props.title.title}
                             className={myClasses.textField}
                             margin="normal"
                             variant="outlined"
@@ -76,8 +78,12 @@ export default function AlertDialog(props) {
           </Button>
                 </DialogActions>
             </Dialog>
-            <SpeedDial classes={props.classes} open={handleClickOpen} close={handleClose}/>
-            {/* <SpeedDial /> */}
+            <div className={classes.DisplaySpeedDial}>
+                <SpeedDial classes={props.classes}  open={handleClickOpen} close={handleClose}/>
+            </div>
+            <div className={classes.DisplayCreateIcon}>
+                <CreateNoteIcon  open={handleClickOpen} close={handleClose}/>
+            </div>
         </div>
     );
 }
