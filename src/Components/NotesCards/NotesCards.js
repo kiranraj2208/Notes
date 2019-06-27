@@ -55,6 +55,10 @@ const NotesCards = props => {
             console.log('deleted');
             setLoading(false);
         })
+        .catch( error => {
+            console.log(error);
+            setLoading(false);
+        })
     }
 
     const titleChangeHandler = (event) => {
@@ -89,6 +93,9 @@ const NotesCards = props => {
             }).then(response => {
                 console.log('updated')
                 setLoading(false);
+            }).catch(error => {
+                console.log(error);
+                setLoading(false);
             })
     }
     
@@ -104,12 +111,15 @@ const NotesCards = props => {
                 const newNote = response.data[key];
                 newNote.id = key;
                 arr.push(newNote);
-                console.log('init');
-                setLoading(false);
+                console.log('init');  
             })
                 setNotes(arr);
             console.log(arr);
         }
+            setLoading(false);
+        }).catch(error => {
+            console.log(error);
+            setLoading(false);
         })
         
     }, [])
