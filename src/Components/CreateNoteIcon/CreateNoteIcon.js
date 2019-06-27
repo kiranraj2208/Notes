@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './CreateNoteIcon.module.css'
 import CreateIcon from '@material-ui/icons/CreateRounded';
 import IconButton  from '@material-ui/core/IconButton';
-import Aux from '../../Hoc/Aux';
 
 
 const CreateNoteIcon = props => {

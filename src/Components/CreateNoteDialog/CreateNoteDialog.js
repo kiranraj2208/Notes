@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -33,7 +33,7 @@ export default function AlertDialog(props) {
         setOpen(false);
     }
 
-    if (props.title.length > 0){
+    if (props.note.length > 0){
         setToggle(1);
     }
     
@@ -59,21 +59,25 @@ export default function AlertDialog(props) {
                         <TextField
                         style={{width:'95%'}}
                             required
+                            autoFocus
                             id="outlined-required"
                             label="Title of the note"
-                            value={props.title.title}
+                            value={props.note.title}
                             className={myClasses.textField}
                             margin="normal"
                             variant="outlined"
                             onChange={props.titleChangeHandler}
+                            autoComplete="off"
                         />
+                        <p>{props.alertTitle.p}</p>
           </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary" disables={toggle}>
                         Cancel
           </Button>
-                    <Button onClick={() => {handleClose(); props.createNote()}} color="primary" autoFocus>
+                    <Button onClick={() => {handleClose(); props.createNote()}} color="primary"
+                    disabled={props.alertTitle.p !== null || props.note.title.length === 0}>
                         OK
           </Button>
                 </DialogActions>

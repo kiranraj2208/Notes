@@ -57,7 +57,7 @@ const NotesCard = props => {
             timestamp={props.timestamp}
             description={props.description}
             open={modalOpen} 
-            modalClose={modalClose} 
+            modalClose={() => {modalClose(); props.updateDescription(props.index, props.id) }} 
             changeDescription={props.changeDescription}
             />
             <Card className={classes.card} onClick={getModal}>
