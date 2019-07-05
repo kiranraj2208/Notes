@@ -34,15 +34,15 @@ const suggestions = [
 
 const useStyles = makeStyles(theme => ({
     whole: {
-        display: 'flex',
+        // display: 'flex',
         paddingTop: '5%',
         width: '100%',
     },
     root: {
         flexGrow: 1,
         height: 250,
-        width: '20%',
-        padding: '0% 5%',
+        width: '30%',
+        padding: '0% 35%',
     },
     input: {
         display: 'flex',
@@ -55,6 +55,12 @@ const useStyles = makeStyles(theme => ({
         flex: 1,
         alignItems: 'center',
         overflow: 'hidden',
+    },
+    second: {
+        // display: 'flex',
+        padding: '0% 35%',
+        // width: '100%', 
+        // height: '100%',
     },
     chip: {
         margin: theme.spacing(0.5, 0.25),
@@ -79,13 +85,13 @@ const useStyles = makeStyles(theme => ({
     },
     paper: {
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 100,
         marginTop: theme.spacing(1),
         left: 0,
         right: 0,
     },
     divider: {
-        height: theme.spacing(2),
+        height: theme.spacing(2), Button
     },
 }));
 
@@ -334,6 +340,7 @@ export default function IntegrationReactSelect() {
             </NoSsr>
             </div>
             {/* <form className={classes.container} noValidate autoComplete="off"> */}
+            <div className={classes.second}>
             <div
                 style={{ padding: '0% 5%' }}>
                 <TextField
@@ -358,13 +365,13 @@ export default function IntegrationReactSelect() {
                     top:'20px',
                     fontSize: '80%',
                     backgroundColor: 'blue',
-                    color: 'white'
+                    color:'white'
                 }}
                 onClick={getMath}
             > {buttonValue}
                 </Button>
             <div
-            style={{padding: '0% 5%'}}>
+            style={{padding: '5% 5%'}}>
             <TextField
                 style={{ color: 'blue' }}
                 id="outlined-name"
@@ -378,6 +385,7 @@ export default function IntegrationReactSelect() {
                 margin="normal"
                 variant="outlined"
             />
+            </div>
             </div>
 
             
