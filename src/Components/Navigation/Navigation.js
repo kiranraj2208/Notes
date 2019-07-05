@@ -5,6 +5,7 @@ import { MemoryRouter as Router } from 'react-router';
 import { Link as RouterLink, Route } from 'react-router-dom';
 import classes from './Navigation.module.css';
 import NotesCards from '../NotesCards/NotesCards';
+import Maths from '../Maths/Maths';
 
 
 const Navigation = props => {
@@ -23,12 +24,13 @@ const Navigation = props => {
                 </Link>
                 </li>
                 <li>
-                    <Link to="/third" className={classes.link} component={RouterLink} >
-                        Other</Link>
+                    <Link to="/" className={classes.link} component={RouterLink} >
+                        Maths</Link>
                 </li>
             </ul>
             <Route path="/first" component={First}/>
-            <Route exact path="/" component={NotesCards} />
+            <Route exact path="/second" component={NotesCards} />
+            <Route path="/" component={Maths}/>
         </Router>
         </div>
     );

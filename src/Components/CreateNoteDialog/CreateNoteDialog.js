@@ -58,7 +58,6 @@ export default function AlertDialog(props) {
                     <DialogContentText id="alert-dialog-description">
                         <TextField
                         style={{width:'95%'}}
-                            required
                             autoFocus
                             id="outlined-required"
                             label="Title of the note"
