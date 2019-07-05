@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     },
     root: {
         flexGrow: 1,
-        height: 250,
+        height: 50,
         width: '30%',
         padding: '0% 35%',
     },
@@ -342,7 +342,7 @@ export default function IntegrationReactSelect() {
             {/* <form className={classes.container} noValidate autoComplete="off"> */}
             <div className={classes.second}>
             <div
-                style={{ padding: '0% 5%' }}>
+                 style={{ padding: '0% 5%' }}>
                 <TextField
                 // style={{padding: '0% 5%'}}
                     id="outlined-name"
@@ -356,7 +356,7 @@ export default function IntegrationReactSelect() {
                     variant="outlined"
                 />
                 
-            </div>
+                </div>
             <Button
                 style={{
                     position: 'relative',
@@ -368,10 +368,10 @@ export default function IntegrationReactSelect() {
                     color:'white'
                 }}
                 onClick={getMath}
-            > {buttonValue}
+                > {buttonValue}
                 </Button>
             <div
-            style={{padding: '5% 5%'}}>
+            style={{padding: '25px 5%'}}>
             <TextField
                 style={{ color: 'blue' }}
                 id="outlined-name"
