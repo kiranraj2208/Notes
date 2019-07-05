@@ -289,7 +289,7 @@ export default function IntegrationReactSelect() {
         const requestify = require('requestify');
         if(type !== ''  && expression !== ''){
             setButtonValue('solving')
-        requestify.get(`https://newton.now.sh/${type.value}/${expression}`)
+        requestify.get(`https://newton.now.sh/${type.value}/${expression.toLowerCase()}`)
             .then(function (response) {
                 // Get the response body (JSON parsed or jQuery object for XMLs)
                 // alert(response.getBody());
@@ -371,7 +371,7 @@ export default function IntegrationReactSelect() {
                 > {buttonValue}
                 </Button>
             <div
-            style={{padding: '25px 5%'}}>
+            style={{padding: '30px 5%'}}>
             <TextField
                 style={{ color: 'blue' }}
                 id="outlined-name"
