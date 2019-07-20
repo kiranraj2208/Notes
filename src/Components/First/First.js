@@ -2,7 +2,7 @@ import React from 'react'
 
 const First = props => (
     <div>
-        Home
+        HOME
     </div>
 )
 

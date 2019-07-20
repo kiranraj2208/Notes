@@ -14,23 +14,23 @@ const Navigation = props => {
         <Router className={classes.Router}>
             <ul>
                 <li>
-                    <Link className={classes.link} component={RouterLink} to="/first">
+                    <Link className={classes.link} component={RouterLink} to="/">
                     Home
                 </Link>
                 </li>
                 <li>
-                    <Link className={classes.link} component={RouterLink}  to="/">
+                    <Link className={classes.link} component={RouterLink}  to="/second">
                     Notes
                 </Link>
                 </li>
                 <li>
-                    <Link to="/" className={classes.link} component={RouterLink} >
+                    <Link to="/third" className={classes.link} component={RouterLink} >
                         Maths</Link>
                 </li>
             </ul>
-            <Route path="/first" component={First}/>
-            <Route exact path="/second" component={NotesCards} />
-            <Route path="/" component={Maths}/>
+            <Route exact path="/" component={First}/>
+            <Route path="/second" component={NotesCards} />
+            <Route path="/third" component={Maths}/>
         </Router>
         </div>
     );
